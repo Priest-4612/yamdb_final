@@ -52,8 +52,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      PROJECT_ROOT: ~/www/yatube
+      PROJECT_ROOT: ~/www/yamdb_final
     needs: build_and_push_to_docker_hub
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
     steps:
     - name: Check out the repo
       uses: actions/checkout@v2
@@ -66,7 +67,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         target: ${{ env.PROJECT_ROOT }}
-        source: 'docker-compose.yaml, nginx/default.conf, static, media, .env'
+        source: 'infra/docker-compose.yaml, infra/nginx/default.conf, api_yamdb/static, api_yamdb/media'
 
     - name: executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
