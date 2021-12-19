@@ -46,6 +46,7 @@ jobs:
       with:
         push: true
         no-cache: true 
+        source: api_yamdb/Dockerfile
         tags: priest4612/yamdb_final:latest
 
   deploy:
