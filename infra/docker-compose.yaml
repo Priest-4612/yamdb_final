@@ -14,12 +14,12 @@ services:
       retries: 10
 
   web:
-    depends_on:
-      db:
-        condition: service_healthy
 
     image: priest4612/yamdb_final
     restart: always
+    depends_on:
+      db:
+        condition: service_healthy
     env_file:
       - ./.env
 
