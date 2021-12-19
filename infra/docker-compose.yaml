@@ -18,7 +18,7 @@ services:
       db:
         condition: service_healthy
 
-    image: priest4612/yamdb_final:latest
+    image: priest4612/yamdb_final
     restart: always
     env_file:
       - ./.env
