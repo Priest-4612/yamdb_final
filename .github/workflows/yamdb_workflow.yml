@@ -77,6 +77,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
+          cd ${{ env.PROJECT_ROOT }}
+          sudo docker pull priest4612/yamdb_final:latest
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
