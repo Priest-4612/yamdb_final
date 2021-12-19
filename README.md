@@ -1,5 +1,5 @@
-# infra_sp2
-infra_sp2
+# yamdb_final
+- Адрес сервера: 51.250.23.191
 - Автор: Кричевцов Антон.
 - Когорта: 18
 - Репозиторий гит: https://github.com/Priest-4612/infra_sp2
