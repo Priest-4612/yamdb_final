@@ -67,7 +67,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         target: ${{ env.PROJECT_ROOT }}
-        source: 'docker-compose.yaml, nginx/default.conf, static, media'
+        source: 'infra/docker-compose.yaml, infra/nginx/default.conf, api_yamdb/static, api_yamdb/media'
 
     - name: executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
@@ -78,6 +78,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           cd ${{ env.PROJECT_ROOT }}
+          cd infra/
           sudo docker pull priest4612/yamdb_final:latest
           sudo docker-compose stop
           sudo docker-compose rm web
