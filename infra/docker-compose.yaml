@@ -15,7 +15,8 @@ services:
 
   web:
     depends_on:
-      - condition: service_healthy
+      db:
+        condition: service_healthy
 
     image: priest4612/yamdb_final:latest
     restart: always
@@ -31,6 +32,5 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/var/html/static/
       - media_value:/var/html/media/
-
     depends_on:
       - web
