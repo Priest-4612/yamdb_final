@@ -34,4 +34,4 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 Когда вы запустите проект, по адресу http://127.0.0.1:8000/redoc/ будет доступна документация для API Yatube. В документации описано, как должен работать ваш API. Документация представлена в формате Redoc
 ```
-![example workflow](https://github.com/Priest-4612/yamdb_final/actions/workflows/yamdb_final.yml/badge.svg)
+![example workflow](https://github.com/Priest-4612/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
