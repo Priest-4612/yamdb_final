@@ -1,20 +1,18 @@
+import jwt
 from django.conf import settings
 from django.core.mail import send_mail
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
-
-import jwt
-from rest_framework import mixins
+from rest_framework import filters, mixins, permissions, status, viewsets
 from rest_framework.decorators import action
-from rest_framework import filters, permissions, status, viewsets
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-
 from reviews.models import Category, Genre, Review, Title
 from users.models import User
+
 from .filters import TitlesFilter
 from .permissions import AdminOnly, IsAdminOrMod, IsAdminOrReadOnly, OwnerOnly
 from .serializers import (CategorySerializer, CommentSerializer,

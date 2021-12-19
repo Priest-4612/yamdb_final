@@ -1,6 +1,5 @@
 from rest_framework.permissions import SAFE_METHODS, BasePermission
-
-from users.models import ADMIN, USER, MODERATOR
+from users.models import ADMIN, MODERATOR, USER
 
 
 class IsAdminOrMod(BasePermission):
