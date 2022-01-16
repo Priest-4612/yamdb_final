@@ -32,6 +32,6 @@ services:
       - web
 
 volumes:
-  static_value: /var/www/static/
-  media_value: /var/www/media/
+  static_value:
+  media_value:
 
