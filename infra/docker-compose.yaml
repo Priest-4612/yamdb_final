@@ -11,8 +11,8 @@ services:
     image: priest4612/yamdb_final
     restart: always
     volumes:
-      - static_value:/app/static/
-      - media_value:/app/media/
+      - static_value: /app/static/
+      - media_value: /app/media/
     depends_on:
       - db
     env_file:
@@ -24,14 +24,13 @@ services:
       - "80:80"
 
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - static_value:/var/www/static/
-      - media_value:/var/www/media/
+      - ./nginx/default.conf: /etc/nginx/conf.d/default.conf
+      - static_value: /var/www/static/
+      - media_value: /var/www/media/
 
     depends_on:
       - web
 
 volumes:
-  static_value: /var/www/static/
-  media_value: /var/www/media/
-
+  static_value:
+  media_value:
